@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
+
+class DashboardController extends Controller
+{
+    public function index(): Response
+    {
+        return Inertia::render('Admin/Dashboard', [
+            'stats' => [
+                'total_orders' => 0,
+                'total_menu_items' => 0,
+                'total_ingredients' => 0,
+            ]
+        ]);
+    }
+}
